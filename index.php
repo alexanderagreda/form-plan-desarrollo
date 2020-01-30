@@ -11,7 +11,7 @@
                   <p class="font-weight-bold">Política de tratamiento de datos</p>
                   <p>La Gobernación del Cauca, cumpliendo con lo reglamentado en la Ley 1581 de 2012, Decreto 1377 de 2013 y demás reglamentarios, es responsable del tratamiento de sus datos personales. En consecuencia, se informa al ciudadano que la información solicitada tiene como fin registrar las necesidades y alternativas de solución para la formulación del Plan de Desarrollo 2020-2023. La información obtenida será tratada por la Oficina Asesora de Planeación. Se garantizará los derechos de los titulares de los datos.</p>
                   <div class="form-check mb-5">
-                    <input class="form-check-input" type="checkbox" value="" id="accept-policy">
+                    <input class="form-check-input" type="checkbox" value="" id="accept-policy" autocomplete="off">
                     <label class="form-check-label" for="accept-policy">Acepto</label>
                   </div>
 
@@ -24,25 +24,27 @@
                       
                       <div class="form-group">
                         <label for="tipo-identificacion">Tipo de identificación</label>
-                        <select class="form-control" id="tipo-identificacion" require title="Elija el tipo de documento de identidad">
-                          <option></option>
+                        <select class="form-control" id="tipo-identificacion" required title="Elija el tipo de documento de identidad" autocomplete="off">
+                          <option value="none" selected disabled hidden>Elija una opción</option> 
                           <option>Cédula de ciudadanía</option>
                         </select>
                       </div>
 
                       <div class="form-group">
                         <label for="numero-identificacion">Número de identificación</label>
-                        <input type="number" class="form-control" id="numero-identificacion" require>                        
+                        <input type="number" class="form-control" id="numero-identificacion" required autocomplete="off">                        
                       </div>
                       
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                          Default radio
-                        </label>
+                      <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-control" id="sexo" required autocomplete="off">
+                          <option value="none" selected disabled hidden>Elija una opción</option> 
+                          <option>Hombre</option>
+                          <option>Mujer</option>
+                        </select>
                       </div>
                                             
-                      <div class="form-group">
+                      <div class="form-group" hidden>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                       </div>                      
                     </form>
