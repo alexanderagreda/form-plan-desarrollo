@@ -26,7 +26,7 @@
                       
                       <div class="form-group">
                         <label for="email">Dirección de correo electrónico</label>
-                        <input type="text" placeholder="Escriba su direccion de correo electrónico" class="form-control" id="email" required autocomplete="off" onblur="may(this.value, this.id)">                       
+                        <input type="email" placeholder="Escriba su direccion de correo electrónico" class="form-control" id="email" required autocomplete="off">                       
                       </div>
 
                       <div class="form-group">
@@ -53,7 +53,10 @@
                         <label for="apellido">Apellido</label>
                         <input type="text" placeholder="Escriba su apellido" class="form-control" id="apellido" required autocomplete="off" onblur="may(this.value, this.id)">                        
                       </div>
-
+                      
+                      <div class="form-group">
+                        <h3>Datos Sociodemográficos</h3>
+                      </div>
                       
                       <div class="form-group">
                         <label for="sexo">Sexo</label>
@@ -111,7 +114,7 @@
                         <label for="pais">País de residencia</label>
                         <select class="form-control" id="pais" required autocomplete="off">
                           <option selected disabled hidden>Elija el país</option>
-                          <?php $sel_pais = $con->prepare("SELECT nombre FROM pais ORDER BY nombre "); 
+                          <?php $sel_pais = $con->prepare("SELECT * FROM pais ORDER BY nombre "); 
                             $sel_pais->execute();
                             $res_pais=$sel_pais->get_result();
                             while ($f_pais = $res_pais->fetch_assoc()){
@@ -127,8 +130,21 @@
                         <label for="departamento">Departamento de residencia</label>
                         <select class="form-control" id="departamento" required autocomplete="off">
                           <option selected disabled hidden>Elija un departamento</option>
+                          <?php 
 
-                          <option value=""></option>s                                        
+                              //preparar query
+                              $sel_depto = $con->prepare("SELECT * FROM departamento ORDER BY nombre ");
+                              //ejecutar consulta
+                              $sel_depto->execute();
+
+                              $res_depto=$sel_depto->get_result();
+                              while($f_depto = $res_depto->fetch_assoc()){
+                          ?>
+                          <option value="<?php echo $f_depto['id'] ?>"><?php echo $f_depto['nombre'] ?></option>
+                          <?php 
+                              }
+                              $sel_depto->close();
+                          ?>                                        
                         </select>
                       </div>
 
