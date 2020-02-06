@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-02-2020 a las 02:37:34
+-- Tiempo de generación: 06-02-2020 a las 18:50:51
 -- Versión del servidor: 5.6.45-log
 -- Versión de PHP: 7.4.2
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `plan-desarrollo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `departamento`
+--
+
+CREATE TABLE `departamento` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `municipio`
+--
+
+CREATE TABLE `municipio` (
+  `id` int(11) NOT NULL,
+  `id_departamento` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -276,6 +299,18 @@ CREATE TABLE `usuario` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `departamento`
+--
+ALTER TABLE `departamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `municipio`
+--
+ALTER TABLE `municipio`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `pais`

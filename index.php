@@ -110,7 +110,34 @@
                       <div class="form-group">
                         <label for="pais">País de residencia</label>
                         <select class="form-control" id="pais" required autocomplete="off">
-                          <option selected disabled hidden>Elija una opción</option>
+                          <option selected disabled hidden>Elija el país</option>
+                          <?php $sel_pais = $con->prepare("SELECT nombre FROM pais ORDER BY nombre "); 
+                            $sel_pais->execute();
+                            $res_pais=$sel_pais->get_result();
+                            while ($f_pais = $res_pais->fetch_assoc()){
+                          ?>
+                          <option value="<?php echo $f_pais['id']?>"><?php echo $f_pais['nombre'] ?></option>
+                            <?php }
+                                $sel_pais->close();                          
+                            ?>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="departamento">Departamento de residencia</label>
+                        <select class="form-control" id="departamento" required autocomplete="off">
+                          <option selected disabled hidden>Elija un departamento</option>
+
+                          <option value=""></option>s                                        
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="departamento">Municipio de residencia</label>
+                        <select class="form-control" id="departamento" required autocomplete="off">
+                          <option selected disabled hidden>Elija un departamento</option>
+                          
+                          <option value=""></option>s                                        
                         </select>
                       </div>
                                             
@@ -125,5 +152,6 @@
   </div><!--end col-->
   
 <?php include 'extend/scripts.php'; ?>
+
 
 
