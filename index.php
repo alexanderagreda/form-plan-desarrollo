@@ -121,7 +121,7 @@
                           ?>
                           <option value="<?php echo $f_pais['id']?>"><?php echo $f_pais['nombre'] ?></option>
                             <?php }
-                                $sel_pais->close();                          
+                                $sel_pais->close();
                             ?>
                         </select>
                       </div>
@@ -145,18 +145,13 @@
                               }
                               $sel_depto->close();
                           ?>                                        
-                        </select>
+                        </select>                        
                       </div>
 
                       <div class="form-group">
-                        <label for="departamento">Municipio de residencia</label>
-                        <select class="form-control" id="departamento" required autocomplete="off">
-                          <option selected disabled hidden>Elija un departamento</option>
-                          
-                          <option value=""></option>s                                        
-                        </select>
+                        <div id="res_departamento"></div>
                       </div>
-                                            
+
                       <div class="form-group">
                         <button type="button" class="btn btn-success btn-lg" id="enviar">Enviar</button>
                       </div>                      

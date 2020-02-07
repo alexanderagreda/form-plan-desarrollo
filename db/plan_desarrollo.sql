@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-02-2020 a las 20:58:00
+-- Tiempo de generación: 07-02-2020 a las 02:04:52
 -- Versión del servidor: 5.6.45-log
--- Versión de PHP: 7.1.32
+-- Versión de PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `plan-desarrollo`
+-- Base de datos: `plan_desarrollo`
 --
 
 -- --------------------------------------------------------
