@@ -9,6 +9,6 @@
     <!-- Optional JavaScript -->
     <script src="js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.js"></script>
-    <script src="js/departamento.js"></script>
+    <script src="js/change_select.js"></script>
   </body>
 </html>

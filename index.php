@@ -125,36 +125,23 @@
                             ?>
                         </select>
                       </div>
-
+                      
                       <div class="form-group">
-                        <label for="departamento">Departamento de residencia</label>
-                        <select class="form-control" id="departamento" required autocomplete="off">
-                          <option selected disabled hidden>Elija un departamento</option>
-                          <?php 
-
-                              //preparar query
-                              $sel_depto = $con->prepare("SELECT * FROM departamento ORDER BY nombre ");
-                              //ejecutar consulta
-                              $sel_depto->execute();
-
-                              $res_depto=$sel_depto->get_result();
-                              while($f_depto = $res_depto->fetch_assoc()){
-                          ?>
-                          <option value="<?php echo $f_depto['id'] ?>"><?php echo $f_depto['nombre'] ?></option>
-                          <?php 
-                              }
-                              $sel_depto->close();
-                          ?>                                        
-                        </select>                        
+ 	                      <div id="res_pais"></div>
                       </div>
-
+                     
                       <div class="form-group">
                         <div id="res_departamento"></div>
                       </div>
 
                       <div class="form-group">
+                        <div id="res_necesidades_alternativas"></div>
+                      </div>
+
+                      <div class="form-group">
                         <button type="button" class="btn btn-success btn-lg" id="enviar">Enviar</button>
-                      </div>                      
+                      </div>
+                                            
                     </form>
                   </div>
                   <!-- end form -->

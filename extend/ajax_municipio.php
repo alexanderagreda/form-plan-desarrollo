@@ -27,7 +27,3 @@
 <script>
     $('select').material_select();
 </script>
-
-
-
-
