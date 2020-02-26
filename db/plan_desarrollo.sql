@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-02-2020 a las 02:04:52
+-- Tiempo de generación: 07-02-2020 a las 17:16:57
 -- Versión del servidor: 5.6.45-log
--- Versión de PHP: 7.4.2
+-- Versión de PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -70,6 +70,28 @@ INSERT INTO `departamento` (`id`, `nombre`) VALUES
 (95, 'GUAVIARE'),
 (97, 'VAUPÉS'),
 (99, 'VICHADA');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eje`
+--
+
+CREATE TABLE `eje` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `proposito` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `eje`
+--
+
+INSERT INTO `eje` (`id`, `nombre`, `proposito`) VALUES
+(1, 'Sostenibilidad ambiental y cambio climático', 'Promover el cuidado del territorio y la protección de los recursos naturales fortaleciendo la participación ciudadana y la educación ambiental'),
+(2, 'Equidad para la Paz Territorial', 'Propiciar el bienestar general, el desarrollo sostenible y la provisión de servicios sociales adecuados, promoviendo la convivencia, el respeto a la diferencia y la garantía de los derechos humanos como fundamento para la paz territorial'),
+(3, 'Dinámicas económicas e infraestructura', 'Fomentar el desarrollo socioeconómico, la conectividad, la innovación, el emprendimiento y la productividad impulsando economias lícitas y la dotación de infraestructura'),
+(4, 'Transparencia y buen gobierno', 'Fortalecer la confianza de los ciudadanos hacia la administración pública, mediante una gestión transparente, efectiva, que garantice la participación ciudadana y la lucha contra la corrupción');
 
 -- --------------------------------------------------------
 
@@ -1471,6 +1493,12 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `departamento`
 --
 ALTER TABLE `departamento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `eje`
+--
+ALTER TABLE `eje`
   ADD PRIMARY KEY (`id`);
 
 --
